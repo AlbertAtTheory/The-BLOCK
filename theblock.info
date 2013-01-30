@@ -1,0 +1,165 @@
+
+;----------// Theme Information
+
+  name        = The BLOCK
+  description = Main Interface for The BLOCK.
+  core        = 7.x
+  version     = "1.0b"
+  engine      = phptemplate
+  screenshot  = screenshot.png
+  base theme  = adaptivetheme
+
+;----------// Modular stylesheets
+
+  stylesheets[all][] = css/html-elements.css
+  stylesheets[all][] = css/forms.css
+  stylesheets[all][] = css/tables.css
+  stylesheets[all][] = css/fields.css
+  stylesheets[all][] = css/page.css
+  stylesheets[all][] = css/articles.css
+  stylesheets[all][] = css/comments.css
+  stylesheets[all][] = css/blocks.css
+  stylesheets[all][] = css/calendar.css
+  stylesheets[all][] = css/forum.css
+  stylesheets[all][] = css/jgauge.css
+  stylesheets[all][] = css/add2home.css
+  stylesheets[all][] = css/screen.css
+  stylesheets[all][] = css/semavideoblog.css
+  stylesheets[print][] = css/print.css
+  
+  stylesheets[all][] = font/MyFontsWebfontsKit.css
+  
+  	scripts[] = js/profilepage.js
+	scripts[] = js/excanvas.min.js
+	scripts[] = js/jquery.cookie.js
+	scripts[] = js/jquery.easing.1.3.js
+	scripts[] = js/jQueryRotate.2.2.js
+	scripts[] = js/jgauge-0.3.0.a3.js
+	scripts[] = js/global.js
+	scripts[] = js/slides.min.jquery.js
+	scripts[] = js/add2home.js
+
+
+;----------// Regions
+
+  regions[sidebar_first]     = Sidebar first
+  regions[sidebar_second]    = Sidebar second
+  regions[content]           = Main Content
+  regions[highlighted]       = Highlighted
+  regions[article_side]      = Article sidebar
+  regions[profile_fields]    = Profile page blocks
+  regions[content_aside]     = Aside
+  regions[secondary_content] = Secondary
+  regions[tertiary_content]  = Tertiary
+  regions[footer]            = Footer
+  regions[leaderboard]       = Leaderboard
+  regions[header]            = Header
+  regions[menu_bar]          = Menu Bar
+  regions[help]              = Help
+  regions[page_top]          = Page top
+  regions[page_bottom]       = Page bottom
+
+
+;----------// Site Features
+  features[] = logo
+  features[] = name
+  features[] = slogan
+  features[] = node_user_picture
+  features[] = comment_user_picture
+  features[] = comment_user_verification
+  features[] = favicon
+  features[] = main_menu
+  features[] = secondary_menu
+
+
+;----------// Theme Settings
+
+  ; Layout settings
+
+  ; Standard bigscreen
+  settings[bigscreen_layout]         = 'three-col-grail'
+  settings[bigscreen_page_unit]      = 'px'
+  settings[bigscreen_sidebar_unit]   = 'px'
+  settings[bigscreen_max_width_unit] = 'px'
+  settings[bigscreen_page_width]     = 1260
+  settings[bigscreen_sidebar_first]  = 108
+  settings[bigscreen_sidebar_second] = 300
+  settings[bigscreen_set_max_width]  = 1
+  settings[bigscreen_max_width]      = 1260
+  settings[bigscreen_media_query]    = 'only screen and (min-width:1025px)'
+
+  ; Tablet landscape
+  settings[tablet_landscape_layout]         = 'three-col-grail'
+  settings[tablet_landscape_page_unit]      = 'px'
+  settings[tablet_landscape_sidebar_unit]   = 'px'
+  settings[tablet_landscape_max_width_unit] = 'px'
+  settings[tablet_landscape_page_width]     = 1024
+  settings[tablet_landscape_sidebar_first]  = 108
+  settings[tablet_landscape_sidebar_second] = 300
+  settings[tablet_landscape_set_max_width]  = 0
+  settings[tablet_landscape_max_width]      = 1024
+  settings[tablet_landscape_media_query]    = 'only screen and (min-width:769px) and (max-width:1024px)'
+
+  ; Tablet portrait
+  settings[tablet_portrait_layout]         = 'one-col-vert'
+  settings[tablet_portrait_page_unit]      = '%'
+  settings[tablet_portrait_sidebar_unit]   = '%'
+  settings[tablet_portrait_max_width_unit] = 'px'
+  settings[tablet_portrait_page_width]     = 100
+  settings[tablet_portrait_sidebar_first]  = 50
+  settings[tablet_portrait_sidebar_second] = 50
+  settings[tablet_portrait_set_max_width]  = 0
+  settings[tablet_portrait_max_width]      = 780
+  settings[tablet_portrait_media_query]    = 'only screen and (min-width:481px) and (max-width:768px)'
+
+  ; smartphone landscape
+  settings[smartphone_landscape_layout]         = 'one-col-vert'
+  settings[smartphone_landscape_page_unit]      = '%'
+  settings[smartphone_landscape_sidebar_unit]   = '%'
+  settings[smartphone_landscape_max_width_unit] = 'px'
+  settings[smartphone_landscape_page_width]     = 100
+  settings[smartphone_landscape_sidebar_first]  = 50
+  settings[smartphone_landscape_sidebar_second] = 50
+  settings[smartphone_landscape_set_max_width]  = 0
+  settings[smartphone_landscape_max_width]      = 520
+  settings[smartphone_landscape_media_query]    = 'only screen and (min-width:321px) and (max-width:480px)'
+
+  ; smartphone portrait
+  settings[smartphone_portrait_media_query] = 'only screen and (max-width:320px)'
+
+  ; Breadcrumb
+  settings[breadcrumb_display]   = 'yes'
+  settings[breadcrumb_separator] = ' &#187; '
+  settings[breadcrumb_home]      = 0
+
+  ; Search
+  settings[display_search_form_label] = 1
+  settings[search_snippet]            = 1
+  settings[search_info_type]          = 1
+  settings[search_info_user]          = 1
+  settings[search_info_date]          = 1
+  settings[search_info_comment]       = 1
+  settings[search_info_upload]        = 1
+  settings[search_info_separator]     = ' - '
+
+  ; Login block options
+  settings[horizontal_login_block]        = 0
+  settings[horizontal_login_block_enable] = 'on'
+
+  ; Comments
+  settings[comments_hide_title] = 0
+
+  ; Style settings
+  settings[style_enable_schemes] = 'off'
+  settings[style_schemes]        = 'style-default.css'
+
+  ; Extra CSS classes
+  settings[extra_page_classes]      = 0
+  settings[extra_article_classes]   = 0
+  settings[extra_comment_classes]   = 0
+  settings[extra_block_classes]     = 0
+  settings[extra_menu_classes]      = 0
+  settings[extra_item_list_classes] = 0
+
+  ; Extra markup
+  settings[menu_item_span_elements] = 0
