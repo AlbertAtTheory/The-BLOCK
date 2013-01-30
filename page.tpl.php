@@ -1,3 +1,4 @@
+<div id="pagedimmer"></div>
 <div id="page-wrapper" class="<?php if (arg(0) == 'messages') { print 'privatemessages'; } else { print implode(" ", $variables['extra_classes']); } ?>"><div id="page">
 <?php if($page['leaderboard']): ?>
 	<div id="leaderboard-wrapper"><div class="container clearfix">

@@ -47,10 +47,6 @@ function strleft($s1, $s2) {
 		<a href="javascript:animateScrollTo('#main-content');" class="headlines" id="nav_main-content">Latest<br />Headlines</a>
 		<?php if (!$logged_in): ?><a class="getstarted">Get Started</a><?php endif; ?>
 	</div>
-	<div class="floating-left-navigation" style="margin-top: 20px;">
-		<a href="/semamag" alt="The BLOCK Magazine for SEMA 2012 in Las Vegas" style="padding: 0px; line-height: 0;"><img src="/sites/all/themes/theblock/images/semamagazine.png" /></a>
-		<a href="/semamag">The BLOCK<br />SEMA Magazine</a>
-	</div>
 	<script language="javascript">
 	<!--
 		highlightMe('block-views-homepage-slider-block');

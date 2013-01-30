@@ -64,7 +64,7 @@
         <?php $tag = $title ? 'section' : 'div'; ?>
         <<?php print $tag; ?> id="main-content">
 
-			<header><h1 id="page-title">Headlines</h1><!--<a href="#" class="block-button-ui active">Most Recent</a><a href="/" class="block-button-ui">Most Popular</a>//--></header>
+			<header><h1 id="page-title">Headlines</h1></header>
 
           <div id="content"><?php print render($page['content']); ?></div>
 

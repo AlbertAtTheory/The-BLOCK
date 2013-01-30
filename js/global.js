@@ -1,6 +1,6 @@
 (function ($) {
 Drupal.behaviors.myTheme = {
-attach: function(context, settings) {
+attach: function(context, settings) {	
 	$(window).scroll(function(){
 		var window_top = $(window).scrollTop();
 		var div_top = $('#content-column').offset().top - 30;
@@ -21,21 +21,6 @@ attach: function(context, settings) {
 		$("#messages-help-wrapper").fadeIn();
 	}
 	
-	$(".view-homepage-slider").slides({
-		container: 'view-content',
-		play: 8000,
-		effect: 'slide',
-		crossfade: true,
-		fadeSpeed: 1000
-	});
-	
-	$("#getstarted").slides({
-		container: 'getstartedslide',
-		effect: 'fade',
-		crossfade: true,
-		fadeSpeed: 1000
-	});
-	
 	$("#mn-button").click(function(){
 		$("#mn-menu").fadeToggle();
 		$("#block-search-form").fadeToggle();
@@ -44,26 +29,6 @@ attach: function(context, settings) {
 	$("#pagedimmer").click(function(){
 		$("#pagedimmer").fadeOut();
 		resetALL();
-	});
-	
-	$(".getstarted").click(function(){
-		$("#pagedimmer").fadeToggle();
-		$("#getstarted").fadeToggle();
-	});
-	
-	$(".closewelcome").click(function(){
-		$("#welcometotheblock").slideToggle();
-		$("#messages-help-wrapper").fadeToggle();
-		$.cookie("welcometotheblock", "no");
-	});
-	$(".remindmelater").click(function(){
-		$("#welcometotheblock").slideToggle();
-		$("#messages-help-wrapper").fadeToggle();
-		$.cookie("welcometotheblock", "no", { expires: 1 });
-	});
-	
-	$("#block-user-login .block-title").click(function(){
-		$("#block-user-login .block-content").slideToggle();
 	});
 	
 	$("#block-generate-qr").click(function() {
@@ -82,7 +47,6 @@ attach: function(context, settings) {
 		$("#block-generate-qr .qrcode").animate({width:25,height:25,right:0,top:3},800);
 		$("#block-qr-panel").fadeOut();
 		$(".iamfloating").fadeOut();
-		$("#getstarted").fadeOut();
 	}
 	
 	var sections = {},
@@ -173,8 +137,3 @@ function highlightMe(divid) {
 function animateScrollTo(ast) {
 	jQuery('html,body').animate({scrollTop: jQuery(ast).offset().top});
 }
-
-var addToHomeConfig = {
-	animationIn: 'bubble',
-	animationOut: 'drop'
-};

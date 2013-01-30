@@ -49,26 +49,6 @@ h1#page-title {
 
 /* Sidebars */
 
-#block-views-featured-members-block .views-row {
-	clear: both;
-}
-
-#block-views-featured-members-block .views-field-picture {
-	float: left;
-	margin-right: 10px;
-	margin-bottom: 10px;
-}
-
-#block-views-featured-members-block .views-field-name {
-	padding-top: 5px;
-	line-height: 20px;
-}
-
-#block-views-featured-members-block .views-field-field-featuredtext {
-	font-family: Arial, sans-serif;
-	font-size: 11px;
-}
-
 #block-views-recent-action-block { 
 	margin-top: -10px;
 }
