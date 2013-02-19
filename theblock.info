@@ -12,7 +12,7 @@
 
 ;----------// Stylesheets
 
-  ; See each stylesheet for extensive documentation and help.
+  stylesheets[screen][] = bootstrap/css/bootstrap.min.css
   stylesheets[screen][] = css/global.base.css
   stylesheets[screen][] = css/global.styles.css
 
