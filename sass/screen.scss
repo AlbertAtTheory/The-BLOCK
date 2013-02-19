@@ -3612,7 +3612,12 @@ article {
 		li { padding: 0 20px 0 0; }
 	}
 	.node-content {
-		a { text-decoration: underline; }
+		a {
+		  text-decoration: underline;
+		  &.btn {
+  		  text-decoration: none;
+		  }
+		}
 		.field-name-field-image {
 			float: left;
 			margin-left: -20px;
