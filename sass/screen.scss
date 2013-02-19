@@ -1,6 +1,6 @@
 @import "compass/css3/images";
 @import "compass/css3/box-shadow";
-@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
 @mixin lin-grad($start, $end) { background-color: $start; @include filter-gradient($start, $end, vertical); @include background-image(linear-gradient(top, $start 0,$end 100%)); }
 @mixin rad-grad($start, $end) { background-color: $start; @include filter-gradient($start, $end, horizontal); @include background-image(radial-gradient(center, ellipse cover, $start 0%,$end 100%)); }
@@ -53,6 +53,7 @@ body {
 	}
 	@media only screen and (min-width:481px) and (max-width:768px) { min-width: 768px; }
 	@media only screen and (min-width:769px) { min-width: 900px; }
+	.stipple-dottable-wrapper .stipple-call-to-action { display: none; }
 }
 a {
 	color: #EC4622;
@@ -1115,6 +1116,7 @@ a.block-button-ui {
 	}
 }
 .view-homepage-slider {
+  @media only screen and (max-width:768px) { display: none; }
   position: relative;
   .jcarousel-clip-horizontal {
   	width: 600px;
@@ -1122,6 +1124,9 @@ a.block-button-ui {
   .jcarousel-item {
     background: transparent;
     height: 334px;
+    &:hover {
+      background: transparent;
+    }
   }
   .jcarousel-navigation {
     opacity: 0;

@@ -27,7 +27,7 @@
     title: '',
     url: document.location.href,
     text: document.title,
-    urlCurl: 'sharrre.php',  //PHP script for google plus...
+    urlCurl: '/sharrre.php',  //PHP script for google plus...
     count: {}, //counter by social network
     total: 0,  //total of sharing
     shorterTotal: true, //show total by k or M when number is to big
@@ -103,7 +103,7 @@
     facebook: "https://graph.facebook.com/fql?q=SELECT%20url,%20normalized_url,%20share_count,%20like_count,%20comment_count,%20total_count,commentsbox_count,%20comments_fbid,%20click_count%20FROM%20link_stat%20WHERE%20url=%27{url}%27&callback=?",
     //old method facebook: "http://graph.facebook.com/?id={url}&callback=?",
     //facebook : "http://api.ak.facebook.com/restserver.php?v=1.0&method=links.getStats&urls={url}&format=json"
-    twitter: "http://cdn.api.twitter.com/1/urls/count.json?url={url}&callback=?",
+    twitter: "https://cdn.api.twitter.com/1/urls/count.json?url={url}&callback=?",
     digg: "http://services.digg.com/2.0/story.getInfo?links={url}&type=javascript&callback=?",
     delicious: 'http://feeds.delicious.com/v2/json/urlinfo/data?url={url}&callback=?',
     //stumbleupon: "http://www.stumbleupon.com/services/1.01/badge.getinfo?url={url}&format=jsonp&callback=?",
