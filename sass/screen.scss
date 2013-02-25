@@ -1067,7 +1067,7 @@ a.block-button-ui {
 		height: 30px;
 		margin-top: 0 !important;
 		text-indent: -9999px;
-		background: none !important;
+		filter: none !important;
 		background: url(../images/search.png) bottom left no-repeat;
 		background-image: none,  url(../images/search.svg);
 		cursor: pointer;
