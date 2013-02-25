@@ -41,6 +41,7 @@ $font-serif: Georgia, serif;
 
 /* Button Dark: H33 S7 L30 */
 .btn-dark {
+  font-family: Lato;
   background-color: hsl(33, 7%, 20%) !important;
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6d665e", endColorstr="#36332f");
@@ -782,7 +783,6 @@ a.block-button-ui {
 		text-indent: -3000px;
 		line { stroke: red; }
 		@media only screen and (max-width:480px) {
-			background: url(../images/search-white.svg) bottom left;
 			width: 15%;
 		}
 	}
@@ -1067,6 +1067,7 @@ a.block-button-ui {
 		height: 30px;
 		margin-top: 0 !important;
 		text-indent: -9999px;
+		background: none !important;
 		background: url(../images/search.png) bottom left no-repeat;
 		background-image: none,  url(../images/search.svg);
 		cursor: pointer;
