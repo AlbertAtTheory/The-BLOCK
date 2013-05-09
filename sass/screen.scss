@@ -78,7 +78,7 @@ a {
 	color: #EC4622;
 	text-decoration: none;
 	&:hover {
-		color: #9AoEoF;
+		color: #9A0E0F;
 		text-decoration: underline;
 	}
 }
@@ -4317,6 +4317,96 @@ fieldset .filter-help {
 	#bue-0-button-17,#bue-1-button-17 { background-position: -340px 0; }
 	#bue-0-button-18,#bue-1-button-18 { background-position: -360px 0; }
 	#bue-0-button-19,#bue-1-button-19 { background-position: -380px 0; }
+}
+
+/* BUEditor Popup Menu Tables */
+.bue-popup {
+  /* BUEditor Popup Container */
+  z-index: 10;
+  position: absolute;
+  font: 16px $font-sans-new;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border: none;
+  outline: none;
+}
+.bue-zero {
+  /* All #bue-dialog's <td> elements are assigned this class */
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-color: #211e1b;
+  border: 1px solid;
+  background-color: #302c29;
+}
+.bue-popup-head {
+  /* BUEditor Popup Dialog Header DIV */
+  padding: 10px 15px 10px 15px;
+  background-color: #ed4c26;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ed4c26", endColorstr="#d2351c");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#ed4c26), to(#d2351c));
+  background-image: -moz-linear-gradient(top, #ed4c26, #d2351c);
+  background-image: -ms-linear-gradient(top, #ed4c26, #d2351c);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ed4c26), color-stop(100%, #d2351c));
+  background-image: -webkit-linear-gradient(top, #ed4c26, #d2351c);
+  background-image: -o-linear-gradient(top, #ed4c26, #d2351c);
+  background-image: linear-gradient(#ed4c26, #d2351c);
+  font-family: $font-sans;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #FFF;
+  cursor: move;
+}
+.bue-popup-close {
+  /* The popup close button */
+  text-indent: -9999px;
+  position: absolute;
+  overflow: hidden;
+  top: 9px;
+  right: 16px;
+  border: none;
+  width: 14px;
+  height: 14px;
+  background: url(../images/icon-close.png) no-repeat;
+  background-color: rgba(0,0,0,0);
+  margin-top: 5px;
+}
+.bue-popup-body {
+  border: none;
+  color: #e3dfbb;
+  background-color: #302c29;
+}
+.bue-tgd-table {
+  /* Table which contains the BUEditor Popup Form (Element: #bue-tgd-table) */
+  margin: 0;
+  border: none;
+  background: none;
+  tr {
+    background: none;
+    border: none;
+	td {
+	  padding: 15px 15px 0 15px;
+	  label {
+	    display: block;  
+        font-weight: normal;
+        text-transform: uppercase;
+	  }
+    }
+  }
+}
+#bue-dialog #bue-tgd-form {
+  /* Overwrite default tr styles */
+  tr:nth-child(2n+2) {
+    margin: 15px;
+	background: none;
+  }
+  /* "Dark Button" Submit Button */
+  .form-submit {
+    margin: 12px 12px -7px 20px;
+  }
 }
 
 /* Social sharing buttons */
