@@ -1,6 +1,23 @@
 (function ($) {
 Drupal.behaviors.myTheme = {
-attach: function(context, settings) {	
+attach: function(context, settings) {
+	// Replace broken user images with default images.
+	$('.avatar.image-style-30x30').error(function(){
+        $(this).attr('src', '/sites/all/themes/theblock/images/icon-helmet.png').height(23).width(21).css('margin', '4px');
+	});
+
+	$('.image-style-driver-photo').error(function(){
+        $(this).attr('src', '/sites/all/themes/theblock/images/default-profilePoster.jpg').height(336).width(600);
+	});
+
+	$('.avatar.image-style-48x48').error(function(){
+        $(this).remove();
+	});
+
+	// Keep Facebook Login in same window
+	$('.facebook-action-connect').attr('target', '_self');
+	$('#modalContent #user-login div a').attr('target', '_self');
+
 	$(window).scroll(function(){
 		var window_top = $(window).scrollTop();
 		var div_top = $('#content-column').offset().top - 30;
