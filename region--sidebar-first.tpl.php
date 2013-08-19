@@ -35,76 +35,74 @@ function strleft($s1, $s2) {
 }
 ?>
 <div class="<?php print $classes; ?>">
-	<?php if ($content): ?><?php print $content; ?><?php endif; ?>
-	<?php
-		// FRONT PAGE NAVIGATION
-		
-		if ($is_front):
-	?>
-	<div class="floating-left-navigation homenav">
-		<a href="javascript:animateScrollTo('#page');" class="news header">News</a>
-		<a href="javascript:animateScrollTo('#block-views-homepage-slider-block');" class="stories active"  id="nav_block-views-homepage-slider-block">Featured<br />Stories</a>
-		<a href="javascript:animateScrollTo('#main-content');" class="headlines" id="nav_main-content">Latest<br />Headlines</a>
-		<?php if (!$logged_in): ?><a class="getstarted">Get Started</a><?php endif; ?>
-	</div>
-	<script language="javascript">
-	<!--
-		highlightMe('block-views-homepage-slider-block');
-		highlightMe('main-content');
-	//-->
-	</script>
-	<?php
-		endif;
-		
-		if ($usercanedit || $isusersaccount):
-	?>
-	<div id="block-generate-qr">
-		<img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chld=L|1&chl=<?php echo selfURL(); ?>" width="100" height="100" alt="" class="qrcode" />Generate a<br />QR Code
-	</div>
-	<div id="block-qr-panel">
-		<h1>Here's Your QR Code!</h1>
-		<img src="/sites/all/themes/theblock/logo.png" alt="" />
-		<p>Download, print and affix this QR Code to your ride&mdash;and spread the word about The BLOCK&mdash;the biggest, baddest, octane-infused automotive community on the web!</p>
-		<p style="margin-top: -7px; font-size: 12px;">Printed labels optimized for Avery label #22806.</p>
-		<a href="/qr/print/<?php print arg(0); ?>/<?php print arg(1); ?>">Print This Code</a>
-		<a href="/qr/download/<?php print arg(0); ?>/<?php print arg(1); ?>">Download</a>
-	</div>
-	<?php if ($isusersaccount) { ?>
-	<div class="floating-left-navigation myprofilenav">
-		<a class="header"><?php
-			$theuser = user_load($user->uid);
-			if (isset($theuser->picture)) {
-				print theme('image_style', array(
-					'style_name' => '20x20',
-					'path' => $user->picture->uri,
-					'attributes' => array(
-						'class' => 'avatar'
-					)));
-			} else {
-		?><img src="/sites/all/themes/theblock/images/icon-helmet.png" class="avatar" style="width: 20px; height: 20px;" /><?php } ?>My Profile</a>
-		<a href="/node/add/statuses">Update Status</a>
-		<a href="/user/<?php print $user->uid; ?>/edit">Edit Profile</a>
-		<a href="/node/add/vehicles">Add Vehicle</a>
-		<a href="/node/add/album">New Photo Album</a>
-		<a href="/user/logout">Logout</a>
-	</div>
-	<?php
-			} else {
-				$node = node_load(arg(1));
-	?>
-	<div class="floating-left-navigation">
-		<a class="header">Tools</a>
-		<a href="/node/<?php print $node->nid ?>/edit">Edit Content</a>
-		<a href="/node/<?php print $node->nid ?>/delete">Delete</a>
-	</div>
-	<?php
-			}
-		endif;
-		
+	<?php if ($content) { print $content; } ?>
+	<?php if ($user->uid): ?>
+
+		<div id="block-generate-qr">
+			<img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chld=L|1&chl=<?php echo selfURL(); ?>" width="100" height="100" alt="" class="qrcode" />Generate a<br />QR Code
+		</div>
+		<div id="block-qr-panel">
+			<h1>Here's Your QR Code!</h1>
+			<img src="/sites/all/themes/theblock/logo.png" alt="" />
+			<p>Download, print and affix this QR Code to your ride&mdash;and spread the word about The BLOCK&mdash;the biggest, baddest, octane-infused automotive community on the web!</p>
+			<p style="margin-top: -7px; font-size: 12px;">Printed labels optimized for Avery label #22806.</p>
+			<a href="/qr/print/<?php print arg(0); ?>/<?php print arg(1); ?>">Print This Code</a>
+			<a href="/qr/download/<?php print arg(0); ?>/<?php print arg(1); ?>">Download</a>
+		</div>
+
+	<?php endif; ?>
+	<?php /* FRONT PAGE NAVIGATION */ if ($is_front): ?>
+
+		<div class="floating-left-navigation homenav">
+			<a href="javascript:animateScrollTo('#page');" class="news header">News</a>
+			<a href="javascript:animateScrollTo('#block-views-homepage-slider-block');" class="stories active"  id="nav_block-views-homepage-slider-block">Featured<br />Stories</a>
+			<a href="javascript:animateScrollTo('#main-content');" class="headlines" id="nav_main-content">Latest<br />Headlines</a>
+			<?php if (!$logged_in): ?><a href="/user/register/" class="getstarted">Get Started</a><?php endif; ?>
+		</div>
+		<script language="javascript">
+		<!--
+			highlightMe('block-views-homepage-slider-block');
+			highlightMe('main-content');
+		//-->
+		</script>
+
+	<?php endif ?>
+	<?php if ($user->uid): { ?>
+
+		<div class="floating-left-navigation myprofilenav">
+			<a href="/user" class="header"><?php
+				$theuser = user_load($user->uid);
+				if (isset($theuser->picture)) {
+					print theme('image_style', array(
+						'style_name' => '20x20',
+						'path' => $user->picture->uri,
+						'attributes' => array(
+							'class' => 'avatar'
+						)));
+				} else {
+			?><img src="/sites/all/themes/theblock/images/icon-helmet.png" class="avatar" style="width: 20px; height: 20px;" /><?php } ?>My Profile</a>
+			<a href="/node/add/statuses">Update Status</a>
+			<a href="/user/<?php print $user->uid; ?>/edit">Edit Profile</a>
+			<a href="/node/add/vehicles">Add Vehicle</a>
+			<a href="/node/add/album">New Photo Album</a>
+			<a href="/user/logout">Logout</a>
+		</div>
+
+	<?php } ?>
+	<?php if(!$isusersaccount && $usercanedit) { $node = node_load(arg(1)); ?>
+
+		<div class="floating-left-navigation">
+			<a class="header">Tools</a>
+			<a href="/node/<?php print $node->nid ?>/edit">Edit Content</a>
+			<a href="/node/<?php print $node->nid ?>/delete">Delete</a>
+		</div>
+
+	<?php } ?>
+	<?php endif; 
 		// FORUM NAVIGATION
-		
-		if (arg(0) == 'forum'):
+		if(arg(0) == 'forum'):
 	?>
+
 	<div class="floating-left-navigation" id="forum-navigation">
 		<a href="/forum" class="header forums">Forums</a>
 		<?php if ($logged_in) { ?><a href="/forum/new" class="<?php if (arg(1) == 'new') print "active"; ?>">New Topics</a><?php } ?>
@@ -112,11 +110,9 @@ function strleft($s1, $s2) {
 		<a href="/forum/active" class="<?php if (arg(1) == 'active') print "active"; ?>">Active Topics</a>
 		<?php if ($logged_in) { ?><a href="/forum/markasread" class="<?php if (arg(1) == 'markasread') print "active"; ?>">Mark All Read</a><?php } ?>
 	</div>
-	<?php
-		endif;
-		
+
+	<?php endif;
 		// RACING NAVIGATION
-		
 		if (arg(1) == 143):
 	?>
 	<div class="floating-left-navigation racingnav">

@@ -66,11 +66,6 @@ function theblock_textarea($variables) {
 	'class' => array('form-textarea-wrapper'),
 	);
 	
-	// Add resizable behavior.
-	//if (!empty($element['#resizable'])) {
-	//$wrapper_attributes['class'][] = 'resizable';
-	//}
-	
 	$output = '<div' . drupal_attributes($wrapper_attributes) . '>';
 	$output .= '<textarea' . drupal_attributes($element['#attributes']) . '>' . check_plain($element['#value']) . '</textarea>';
 	$output .= '</div>';
@@ -213,7 +208,7 @@ function theblock_page_alter(&$page) {
  * Override or insert variables into the html templates.
  */
 function theblock_preprocess_html(&$vars) {
-	load_subtheme_media_queries($media_queries_css, 'adaptivetheme_subtheme');
+	//load_subtheme_media_queries($media_queries_css, 'adaptivetheme_subtheme');
 	
 	// Insert our custom META tags here
   drupal_add_html_head(array('#tag' => 'meta', '#attributes' => array('name' => 'apple-mobile-web-app-status-bar-style', 'content' =>  'black')), 'meta_applemobilewebappstatusbarstyle');

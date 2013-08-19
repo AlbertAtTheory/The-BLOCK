@@ -109,7 +109,7 @@
   </script>
   <script type='text/javascript'>
   //<![CDATA[
-    _stippleq.push(['load', '359CUJ', {}]);
+    //_stippleq.push(['load', '359CUJ', {}]);
   //]]>
   </script>
 </body>
