@@ -2811,12 +2811,75 @@ tr.info, tr.even, tr:nth-child(2n+2) {
 	     background-image: url(../images/arrow-asc-on.svg) !important;
 	   }
 	 }
-	 .forum-table-forums {
-	   background: transparent !important;
-	   .forum-topics, .forum-posts, .forum-last-post {
-	     color: #ED4C26;
-	   }
-	 }
+  .forum-table-forums {
+    background: transparent !important;
+    margin-top: -30px;
+    margin-left: 10px;
+    width: 840px;
+    color: #302c29;
+    tbody {
+    	border-left: 20px solid #f4f3e9;
+    	border-right: 20px solid #f4f3e9;
+    	width: -20px;
+    	td {
+      	padding: 15px 0 15px 0;
+      	border-bottom: 1px solid #dadad4;
+      }
+    }
+    tr.even, tr.odd {
+      background: #F4F3E9;
+    }
+    .forum-name {
+    	font-family: Arial, sans-serif;
+    	font-weight: bold;
+    	font-size: 14px;
+    }
+    .forum-list-icon, .forum-details, .forum-last-reply {
+      vertical-align: top;
+    }
+    .forum-last-reply {
+    	padding-top: 21px;
+    	font-family: Arial, sans-serif;
+    	font-style: oblique;
+    	a {
+      	font-weight: bold;
+      	font-style: normal;
+      	&.username {
+        	font-weight: normal;
+        	text-decoration: underline;
+        	font-style: normal;
+        }
+      }
+    }
+    .utility {
+    	float: right;
+    	display: block;
+    	width: 13px;
+    	height: 13px;
+    	text-indent: -9999px;
+    	white-space: nowrap;
+    	margin-right: 12px;
+    	margin-top: -6px;
+    }
+    .forum-subforums {
+    	margin-top: 10px;
+      a {
+      	font-family: Arial, sans-serif;
+      	font-weight: bold;
+      	font-size: 11px;
+      }
+    }
+    .forum-description {
+    	font-style: oblique;
+    	font-size: 12px;
+    	padding-top: 3px;
+    }
+    .forum-list-icon {
+    	padding-right: 15px;
+    }
+    .forum-topics, .forum-posts, .forum-last-post {
+      color: #ED4C26;
+    }
 	}
 	.forum-header th.forum-name {
 		text-indent: -9999px;
@@ -2848,6 +2911,12 @@ tr.info, tr.even, tr:nth-child(2n+2) {
 		#forum-statistics-active-body { font-weight: bold; }
 		#forum-statistics-statistics-body { padding-bottom: 20px; a { font-weight: bold; } }
 	}
+  .forum-wrapper-25 .forum-table-name {
+  	position: relative;
+  }
+  .forum-tools {
+  	display: none;
+  }
 }
 
 /* Welcome to the Block Popup */
@@ -4962,4 +5031,3 @@ input {
     left: 10px;
   }
 }
-
