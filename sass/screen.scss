@@ -117,6 +117,21 @@ input {
 		&:focus { background: #49443e; border: 0; }
 	}
 }
+.ajax-progress {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  .throbber {
+    background: transparent url(../images/spinner.gif) no-repeat 0px 0px;
+    float: left;
+    height: 16px;
+    width: 16px;
+    margin: 2px;
+  }
+}
+.flag-waiting .flag-throbber {
+  background: none;
+}
 textarea {
 	border: 0;
 	background: #49443e;
@@ -126,7 +141,10 @@ textarea {
 	color: #f7f4eb;
 	font-size: 14px;
 	line-height: 20px;
-	&:focus { background: #49443e; border: 0; }
+	&:focus {
+	  background-color: transparent !important;
+    border: 1px solid #ccc;
+  }
 }
 .form-submit, select, #edit-cancel {
 	-webkit-border-radius: 0;
@@ -162,6 +180,10 @@ textarea {
 #main-content {
   margin: 0;
 	position: relative;
+	min-height: 380px;
+	header h1.title-with-buttons {
+    margin-right: 20px;
+  }
 }
 .title-with-buttons {
 	float: left;
@@ -1503,7 +1525,7 @@ a.block-button-ui {
 	
 	h1 {
 		position: absolute;
-		top: 0;
+		top: -24px;
 		left: 0;
 		padding: 10px 20px 10px 20px;
 		width: 480px;
@@ -1526,6 +1548,7 @@ a.block-button-ui {
 	line-height: 20px;
 	.view-my-qr-codes {
 		h1, h2 { margin-bottom: 20px; }
+		h1 { margin-top: -5px; }
 		.qrpreview { float: left; margin-right: 20px; background: white url(../logo.png) 5px 205px no-repeat; padding-bottom: 64px; background-size: 190px; }
 		.view-header {
 			.avatar { float: left; margin-right: 20px; margin-bottom: 20px; }
@@ -1540,10 +1563,14 @@ a.block-button-ui {
 				width: 400px;
 				padding: 20px;
 				height: 227px;
-				margin-bottom: 20px;
+				padding-bottom: 40px;
+        margin-bottom: -40px;
 				float: left;
 				a { width: 220px; margin-bottom: 5px; }
-				&.views-row-odd { border-right: 20px solid #211c1a; clear: both; }
+				&.views-row-odd {
+				  border-right: 20px solid #211c1a; clear: both;
+				  border-bottom: 20px solid #211c1a;
+				}
 				.qrpreview { float: right; background-size: 135px; background-position-y: 145px; padding-bottom: 40px; margin-right: 0; }
 			}
 		}
@@ -1560,6 +1587,7 @@ a.block-button-ui {
 	  margin: 0;
 		padding: 15px 0 15px 0;
 		position: relative;
+		margin-top: -13px;
 		header {
 		  height: 41px;
 		  border-bottom: 10px solid #211c1a;
@@ -1777,6 +1805,10 @@ a.block-button-ui {
 	@media only screen and (max-width:480px) { display: none; }
 }
 #modalContent {
+  div.messages {
+    margin-left: 1px;
+    margin-top: 35px;
+  }
   .ctools-modal-content {
     //@include lin-grad(#2e2b27, #524d46);
     background: #302c29;
@@ -3596,7 +3628,9 @@ article {
 		margin-bottom: 10px;
 		padding-bottom: 5px;
 		padding-left: 10px;
-		border-bottom: 1px solid #443f39
+		border-bottom: 1px solid #443f39;
+		position: relative;
+    z-index: 10;
 	}
 	.region-article-side {
 		float: right;
@@ -4146,6 +4180,7 @@ select {
 .form-select:focus {
   border: 1px solid #fc0;
   background: #ffffdf;
+  color: rgb(236, 70, 34);
 }
 textarea:focus {
   border: 1px solid #fc0;
@@ -4835,3 +4870,96 @@ input {
 .forum .interview.theblock {
   background: url(../images/interview-reverse.png) top left no-repeat;
 }
+
+.page-user .block-inner {
+  position: relative;
+  .jcarousel-prev, .jcarousel-next {
+    top: -45px;
+  }
+  .view-header a.jcarousel-viewall {
+    top: -1px;
+    right: 62px;
+    position: absolute;
+  }
+  .view-empty a.jcarousel-viewall {
+    position: absolute;
+    right: 0;
+    top: -1px;
+  }
+}
+
+.bue-popup-content {
+  margin: 1px 0 0 0;
+}
+.bue-popup-close {
+  position: relative;
+  top: 6px;
+  right: -12px;
+}
+.bue-popup-close:hover {
+  background-color: transparent;
+}
+
+#columns {
+  min-height: 400px;
+}
+
+.node-type-statuses #main-content {
+  header#profile_header {
+    position: relative;
+    top: -503px;
+    #page-title {
+      font-size: 24px;
+    }
+  }
+  article.node-statuses {
+    div.node-content {
+      top: 80px;
+      position: relative;
+      margin: 20px;
+    }
+    div.user-picture {
+      padding-left: 20px;
+      position: relative;
+    }
+  }
+}
+
+.node-type-vehicles #page-wrapper.vehicle .view-header a.block-button-ui {
+  position: relative;
+}
+
+@media (min-width: 481px) {
+  .node-type-parts article.node-parts section.field-name-field-partnumber, 
+  .node-type-engines article.node-engines section.field-name-field-partnumber,
+  .node-type-engines article.node-engines section.field-name-field-borestroke,
+  .node-type-engines article.node-engines section.field-name-field-displacement {
+      position: relative;
+      left: 10px;
+    }
+  .node-type-parts .block-button-ui.installbutton,
+  .node-type-engines .block-button-ui.installbutton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+@-moz-document url-prefix() {
+  .node-type-parts article.node-parts section.field-name-field-partnumber,
+  .node-type-engines article.node-engines section.field-name-field-partnumber {
+    position: relative;
+    top: 85px;
+    left: 10px;
+  }
+  .node-type-engines article.node-engines section.field-name-field-displacement {
+    position: relative;
+    top: 90px;
+    left: 10px;
+  }
+  .node-type-engines article.node-engines section.field-name-field-borestroke {
+    position: relative;
+    top: 95px;
+    left: 10px;
+  }
+}
+
